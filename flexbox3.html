@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #03</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        .flex-container {
+            display: flex;
+        }
+
+        .flex-container div {
+            flex-basis: 100px;
+            /* definir largura NO SENTIDO DO MAIN AXIS dentro de um objeto no flex-container */
+            
+            /* É aplicado 100px no MAIN AXIS, ou seja, de for row é width
+            e se for column é height (sim, é doidera) */
+        
+            /* flex basis é mais forte que width (no caso do row). */
+
+
+        }
+
+        .flex-container div:nth-child(4) {
+            flex: 3 6 100px;
+            /* propriedade de atalho: grow shrink basis */
+            /* essas coisas vão mudar no elemento 4 */
+        }
+
+        .flex-container {
+            width: 300px;
+            /* o 4 vai diminuir mais que outros, pois o shrink dele foi definido
+            como 6. */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag nolabel">
+        <div class="tag nolabel">1</div>
+        <div class="tag nolabel">2</div>
+        <div class="tag nolabel">3</div>
+        <div class="tag nolabel">4</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Altura e Largura</title>
+    <style>
+        body {
+            font-size: 40px;
+            background-color: coral;
+            height: 100%;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+
+        span, div {
+            width: 50%;
+            height: 50%;
+            /* esse nã será aplicado. Pois, porcentagem depende de um
+            valor primário para se definir. */
+
+            /* esse valor se define a partir do body - que tem o height
+            do tamanho dos elementos ali -. Por causa disso, o width com porcentagem
+            'aplica' e a altura 'não', na verdade, ela aplica mas não faz diferença. */
+            
+            height: 250px;
+            /* esse será aplicado */
+        }
+
+        /*  tudo isso fica confuso se vc n executar o código e testar. */
+    </style>
+</head>
+
+<body>
+    <div>Título</div>
+    <span>Subtítulo</span>
+</body>
+
+</html>

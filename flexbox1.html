@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #01</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        .big {
+            font-size: 1.5em;
+        }
+
+        .flex-container {
+            display: flex;
+            /* main axis por padrão é a linha */
+            flex-direction: column;
+            /* muda o main axis */
+            flex-direction: column-reverse;
+            /* inverte a ordem dos elementos verticalmente */
+            flex-direction: row-reverse;
+            /* inverte a ordem dos elemento horizontalmente, incluindo o allign */
+            flex-direction: row;
+            /* propriedade padrão */
+            width: 50%;
+            /* mesmo com o overflow dos elementos pra fora, tem como lidar com isso */
+            flex-wrap: wrap;
+            /* isso quebra a linha acima. */
+            flex-wrap: wrap-reverse;
+            /* quebra a linha e inverte a ordem delas (testa para entender) */
+            flex-flow: row wrap;
+
+            height: 200px;
+            /* define uma altura pequena */
+            flex-flow: column-reverse wrap;
+            /* quebra as colunas, que começam invertidas */
+            flex-flow: column-reverse nowrap;
+            /* não quebra as colunas, mas ainda começam invertidas */
+            flex-flow: row wrap;
+            /* quebra e traça linhas */
+
+            /*  OU seja, flex flow = flex-wrap + flex-direction */
+
+            /* justify-content = main axis */
+            justify-content: flex-start;
+            /* justificando o conteúdo a partir do flex-start (inicio) */
+            justify-content: flex-end;
+            /* justificando o conteúdo a partir do flex-end (fim).
+            Tudo vai alinhas no final. */
+            justify-content: center;
+            /* centraliza */
+            justify-content: space-around;
+            /* coloca espaços entre elementos para ficarem uniforme */
+            justify-content: space-between;
+            /* espaços apenas entre elementos, desconsidera as bordas */
+        
+            /* align-itens = cross axis */
+            height: 400px;
+
+            align-items: stretch;
+            /* estica os itens para alinhas (é o padrão) */
+            align-items: baseline;
+            /* alinha o itens pelo conteúdo dentro deles (testa pra ver) */
+
+            align-items: flex-start;
+            /* vai alinhar na primeira coluna */
+            align-items: flex-end;
+            /* vai alinhar na ultima coluna */
+            align-items: center;
+            /* centraliza na vertical */
+
+            /* mais de uma linha = align-content */
+
+            align-content: flex-start;
+            /* todas as linhas vão pro start do cross axis*/
+            align-content: flex-end;
+            /* todas as linhas vão pro end do cross axis*/
+            align-content: space-around;
+            /* alinha os espaços no crossaxis (incluindo bordas) */
+            align-content: space-between;
+            /* alinha os espaços no crossaxis (tirando as bordas) */
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag nolabel">
+        <div class="tag nolabel">1</div>
+        <div class="tag nolabel">2</div>
+        <div class="tag nolabel big">3</div>
+        <div class="tag nolabel">4</div>
+        <div class="tag nolabel">5</div>
+        <div class="tag nolabel">6</div>
+        <div class="tag nolabel">7</div>
+        <div class="tag nolabel">8</div>
+        <div class="tag nolabel">9</div>
+        <div class="tag nolabel">10</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

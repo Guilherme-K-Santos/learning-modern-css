@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #02</title>
+    <style>
+        html,
+        body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+
+        body {
+            display: grid;
+            grid-template-columns: [inicio] 1fr [meio] 1fr [meio-2] 1fr [fim];
+            /* é possivel dar nome para as colunas e linhas. */
+            grid-template-rows: repeat(3, 1fr);
+            /* um layour 3x3 */
+
+            column-gap: 20px;
+            /* espaço entre as colunas */
+
+            row-gap: 20px;
+            /* espaço entre as linhas */
+
+            gap: 50px 10px;
+            /* forma otimizada, ordem: linhas colunas */
+
+            gap: 10px;
+            /* 10px entre linhas E colunas */
+        }
+
+        .d1 {
+            grid-column-start: inicio;
+            grid-column-end: fim;
+
+            /* ou, uma forma otimizada: */
+            /* grid-column: inicio / fim; */
+
+            /* grid-row: 1 / 4; */
+            /* to inicio ao fim (nesse caso n dei nome pras colunas e linhas) */
+
+            /* grid-area: 1/inicio / 4/fim; */
+            /* otimização novamente, ordem:  row-start column-start row-end column-end */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+</body>
+
+</html>

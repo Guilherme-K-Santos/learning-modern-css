@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://specificity.keegan.st/ */
+        /* 
+            1. inline
+            2. Id
+            3. Classes, Pseudo-Classes e atributos
+            4. Elemento, Pseudo-Elementos
+        */
+
+        body {
+            font-size: 40px;
+        }
+        div {
+            background-color: #00b;
+            color: white
+        }
+
+        div[wm-cor] {
+            background-color: darkorange;
+        }
+
+        div:hover {
+            background-color: purple;
+        }
+        /* a especificidade de hover é a mesma do [wm-cor].
+        Ou seja, se ele estiver acima de outro, não funcionará */
+
+        div.estilo {
+            background-color: rgb(95, 0, 0);
+        }
+
+        #unico1, #unico2 {
+            background-color: black;
+        }
+
+        /* Note que, os Ids são mais especificos que o hover. Portanto, nesse ultimos
+        dois casos o hover não é aplicado. */
+    </style>
+</head>
+
+<body>
+    <div id="unico1" class="estilo" style="background-color: rgb(255, 119, 142);">
+        <!-- o inline é o maior em ordem de especificidade, dentre todos. -->
+        #unico1 vs .estilo vs inline
+    </div>
+    <div id="unico2" class="estilo">#unico2 vs .estilo</div>
+    <div class="estilo" wm-cor>.estilo vs wm-cor</div>
+    <div wm-cor>wm-cor</div>
+    <div class="estilo">.estilo</div>
+    <div>elemento</div>
+</body>
+
+</html>
